@@ -6,7 +6,9 @@ import org.junit.Test;
 public class MyHashMapTest {
 	@Test
 	public void givenASentenceWhenWordsAreAddedToListShouldReturnWordFrequency() {
-		String sentence = "To be or not to be";
+		String sentence = "Paranoids are not paranoid because they are paranoid but " + 
+				          "because they keep putting themselves deliberately into " + 
+				          "paranoid avoidable situations";
 		MyHashMap<String, Integer> myHashMap = new MyHashMap<>();
 		String[] words = sentence.toLowerCase().split(" ");
 		for (String word : words) {
@@ -19,8 +21,8 @@ public class MyHashMapTest {
 			}
 			myHashMap.add(word, value);
 		}
-		int frequency = myHashMap.get("to");
+		int frequency = myHashMap.get("paranoid");
 		System.out.println(myHashMap);
-		Assert.assertEquals(2, frequency);
+		Assert.assertEquals(3, frequency);
 	}
 }
